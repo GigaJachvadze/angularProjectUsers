@@ -1,0 +1,29 @@
+<div class="container">
+  <table class="table">
+      <tr class="header">
+        <th class="headerContent" *ngFor="let header of headerData">{{header}}</th>
+      </tr>
+      <tr *ngFor="let item of data; let i = index">
+        <td class="name" *ngIf="item.name.length > maxCharactersInName - 1">
+            {{item.name.substr(0, maxCharactersInName)}}...
+            <div class="toolTip">{{item.name}}</div>
+        </td>
+        <td *ngIf="item.name.length <= maxCharactersInName - 1">
+            {{item.name}}
+        </td>
+        <td class="imageContainer">
+            <img class="image" *ngIf="item.gender == 'male'" src="../../../assets/manIcon.png" alt="male">
+            <img class="image" *ngIf="item.gender == 'female'" src="../../../assets/womanIcon.png" alt="female">
+        </td>
+        <td>
+            {{item.email}}
+        </td>
+        <td>
+            <input type="checkbox" [ngModel]="item.status | statusPipe" disabled>
+        </td>
+        <td *ngIf="editable">
+          <button (click)="emit(i)">Edit</button>
+        </td>
+      </tr>
+  </table>
+</div>
