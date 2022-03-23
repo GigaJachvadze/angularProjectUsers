@@ -1,20 +1,39 @@
 <div class="container">
-  asdasd
-  <form action="">
-    <div>
-      <input type="text" name="" id="">
+  <form class="form">
+    <div class="innerContainer">
+      <div class="inputContainer">
+        <label for="id">Id</label>
+        <input [(ngModel)]="user!.id" type="number" name="id">
+      </div>
+      <div class="inputContainer">
+        <label for="name">Name</label>
+        <input [(ngModel)]="user!.name" type="text" name="name">
+      </div>
     </div>
-    <div>
-      <input type="text" name="" id="">
+    <div class="innerContainer">
+      <div class="inputContainer">
+        <label for="email">Email</label>
+        <input [(ngModel)]="user!.email" type="email" name="email">
+      </div>
+      <div class="inputContainer genderContainer">
+        <label class="genderLabel" for="gender">Gender</label>
+        <select class="genderSelect" [(ngModel)]="user!.gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
     </div>
-    <div>
-      <input type="text" name="" id="">
+    <div class="innerContainer">
+      <div class="inputContainer statusContainer">
+        <label class="statusLabel" for="status">Status</label>
+        <select class="statusSelect" [(ngModel)]="user!.status" name="status" id="">
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
     </div>
-    <div>
-      <input type="text" name="" id="">
-    </div>
-    <div>
-      <input type="text" name="" id="">
+    <div class="innerContainer buttonContainer">
+        <button (click)="emit()" class="saveButton">Save</button>
     </div>
   </form>
 </div>

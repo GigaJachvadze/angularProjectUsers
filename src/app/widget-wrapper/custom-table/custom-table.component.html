@@ -6,7 +6,7 @@
       <tr *ngFor="let item of data; let i = index">
         <td class="name" *ngIf="item.name.length > maxCharactersInName - 1">
             {{item.name.substr(0, maxCharactersInName)}}...
-            <div class="toolTip">{{item.name}}</div>
+            <div class="toolTip"><span>{{item.name}}</span></div>
         </td>
         <td *ngIf="item.name.length <= maxCharactersInName - 1">
             {{item.name}}
@@ -22,7 +22,7 @@
             <input type="checkbox" [ngModel]="item.status | statusPipe" disabled>
         </td>
         <td *ngIf="editable">
-          <button (click)="emit(i)">Edit</button>
+          <button class="button" (click)="emit(i)">Edit</button>
         </td>
       </tr>
   </table>

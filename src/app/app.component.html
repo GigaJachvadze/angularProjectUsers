@@ -1,3 +1,3 @@
 <app-custom-table [headerData]="headerData" [data]="usersData" [editable]="true" (editEvent)="openUserEditor($event)"></app-custom-table>
-<app-custom-user-modal *ngIf="backDrop | async"></app-custom-user-modal>
+<app-custom-user-modal *ngIf="backDrop | async" [user]="usersData![chosenUserIndex!]" [userIndex]="chosenUserIndex" (userEvent)="updateUser($event)"></app-custom-user-modal>
 <app-backdrop></app-backdrop>

@@ -1,7 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component';
 import { BackDropModule } from './shared/backDrop';
 import { WidgetWrapperModule } from './widget-wrapper/widget-wrapper.module';
@@ -14,7 +15,9 @@ import { WidgetWrapperModule } from './widget-wrapper/widget-wrapper.module';
     BrowserModule,
     WidgetWrapperModule,
     HttpClientModule,
-    BackDropModule
+    BackDropModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
